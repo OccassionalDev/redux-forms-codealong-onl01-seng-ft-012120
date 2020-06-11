@@ -14,6 +14,11 @@ class CreateTodo extends Component {
     })
   }
   
+  handleSubmit = e => {
+    e.preventDefault()
+    
+  }
+  
   render() {
     return(
       <div>
@@ -22,7 +27,7 @@ class CreateTodo extends Component {
             <label>add todo</label>
             <input type="text" onChange={ this.handleChange }value={ this.state.text }/>
           </p>
-          <input type="submit" onSubmit= />
+          <input type="submit" onSubmit={ this.handleSubmit } />
         </form>
       </div>
     );
