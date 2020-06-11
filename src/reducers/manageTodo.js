@@ -4,6 +4,12 @@ export default function manageTodo(state = {
 
   switch(action.type) {
     case 'ADD_TODO':
+      console.log({ todos: state.todos.concat(action.payload.text) });
+ 
+      return { todos: state.todos.concat(action.payload.text) };
+      break
       
+    default:
+      return state;
   }
 }
