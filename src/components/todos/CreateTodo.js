@@ -22,7 +22,7 @@ class CreateTodo extends Component {
             <label>add todo</label>
             <input type="text" onChange={ this.handleChange }value={ this.state.text }/>
           </p>
-          <input type="submit" />
+          <input type="submit" onSubmit= />
         </form>
       </div>
     );
@@ -31,7 +31,10 @@ class CreateTodo extends Component {
 
 mapDispatchToProps = dispatch => {
   return {
-    addTodo: formData => dispatch(action)
+    addTodo: formData => dispatch({ 
+      type: 'ADD_TODO', 
+      payload: formData
+    })
   }
 }
  
